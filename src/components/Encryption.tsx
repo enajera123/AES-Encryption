@@ -5,7 +5,7 @@ import CryptoJS from 'crypto-js'
 function Encryption() {
     const [secretKey, setSecretKey] = React.useState('')
     const [data, setData] = React.useState('')
-    const [encrypt, setEncrypt] = React.useState(false)
+    const [_, setEncrypt] = React.useState(false)
     const [result, setResult] = React.useState('')
 
     const handleEncrypt = () => {
