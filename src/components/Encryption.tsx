@@ -8,7 +8,7 @@ function Encryption() {
     const [encrypt, setEncrypt] = React.useState(false)
     const [result, setResult] = React.useState('')
     const copyText = () => {
-        navigator.clipboard.writeText
+        navigator.clipboard.writeText(result)
     }
     const handleEncrypt = () => {
         try {
