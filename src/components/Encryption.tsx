@@ -35,7 +35,7 @@ function Encryption() {
     }
 
     return (
-        <div className='text-white mt-10 p-4 bg-gray-800 rounded-lg shadow-lg'>
+        <div className='text-white mt-10 p-4 w-1/2 mx-auto bg-gray-800 rounded-lg shadow-lg'>
             <textarea
                 className='bg-gray-700 text-white p-2 w-full mb-4 rounded-lg border focus:outline-none border-none '
                 onChange={(e) => setData(e.target.value)}
