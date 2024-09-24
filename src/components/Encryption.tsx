@@ -37,13 +37,13 @@ function Encryption() {
     return (
         <div className='text-white mt-10 p-4 bg-gray-800 rounded-lg shadow-lg'>
             <textarea
-                className='text-black p-2 w-full mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                className='bg-gray-700 text-white p-2 w-full mb-4 rounded-lg border focus:outline-none border-none '
                 onChange={(e) => setData(e.target.value)}
                 placeholder='Write your data'
                 rows={4}
             ></textarea>
             <input
-                className='text-black p-2 w-full mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                className='bg-gray-700 text-white p-2 w-full mb-4 rounded-lg border focus:outline-none border-none '
                 onChange={(e) => setSecretKey(e.target.value)}
                 type="text"
                 placeholder='Secret key'
