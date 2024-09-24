@@ -5,7 +5,7 @@ import CryptoJS from 'crypto-js'
 function Encryption() {
     const [secretKey, setSecretKey] = React.useState('')
     const [data, setData] = React.useState('')
-    const [_, setEncrypt] = React.useState(false)
+    const [encrypt, setEncrypt] = React.useState(false)
     const [result, setResult] = React.useState('')
 
     const handleEncrypt = () => {
@@ -50,13 +50,13 @@ function Encryption() {
             />
             <div className='block md:flex justify-between gap-5 mb-4'>
                 <button
-                    className='bg-red-500 w-full text-white py-2 px-4 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500'
+                    className={`bg-red-500 w-full text-white py-2 px-4 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 ${!encrypt ? 'md:bg-red-600' : ''}`}
                     onClick={handleDecrypt}
                 >
                     Decrypt
                 </button>
                 <button
-                    className='bg-green-500 w-full mt-2 md:mt-0 text-white py-2 px-4 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500'
+                    className={`bg-green-500 w-full text-white py-2 px-4 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 ${encrypt ? 'md:bg-green-600' : ''}`}
                     onClick={handleEncrypt}
                 >
                     Encrypt
