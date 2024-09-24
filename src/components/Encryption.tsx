@@ -7,7 +7,9 @@ function Encryption() {
     const [data, setData] = React.useState('')
     const [encrypt, setEncrypt] = React.useState(false)
     const [result, setResult] = React.useState('')
-
+    const copyText = () => {
+        navigator.clipboard.writeText
+    }
     const handleEncrypt = () => {
         try {
             const encryptedData = CryptoJS.AES.encrypt(data, secretKey).toString()
@@ -35,7 +37,7 @@ function Encryption() {
     }
 
     return (
-        <div className='text-white mt-10 p-4 w-1/2 mx-auto bg-gray-800 rounded-lg shadow-lg'>
+        <div className='text-white mt-10 p-4 md:w-1/2 mx-auto bg-gray-800 rounded-lg shadow-lg'>
             <textarea
                 className='bg-gray-700 text-white p-2 w-full mb-4 rounded-lg border focus:outline-none border-none '
                 onChange={(e) => setData(e.target.value)}
@@ -45,7 +47,7 @@ function Encryption() {
             <input
                 className='bg-gray-700 text-white p-2 w-full mb-4 rounded-lg border focus:outline-none border-none '
                 onChange={(e) => setSecretKey(e.target.value)}
-                type="text"
+                type="password"
                 placeholder='Secret key'
             />
             <div className='block md:flex justify-between gap-5 mb-4'>
@@ -62,7 +64,7 @@ function Encryption() {
                     Encrypt
                 </button>
             </div>
-            <div className='bg-gray-700 p-4 rounded-lg'>
+            <div onClick={copyText} className='bg-gray-700 p-4 rounded-lg'>
                 <p className='break-words'>{result}</p>
             </div>
         </div>
